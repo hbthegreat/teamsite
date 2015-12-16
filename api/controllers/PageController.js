@@ -7,6 +7,9 @@
 
 module.exports = {
 
+	showCardPage: function (req,res){
+		return res.view('cards');
+	},
 	showHomePage: function (req, res) {
 
     // If not logged in, show the public view.

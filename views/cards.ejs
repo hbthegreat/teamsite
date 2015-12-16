@@ -19,7 +19,7 @@
     </script>
   </head>
 
-  <body class="main-image" ng-app="HomepageModule" ng-controller="HomepageController" ng-cloak>
+  <body class="main-image" ng-app="CardModule" ng-controller="CardController" ng-cloak>
 
       <!-- Creates the navbar -->
       <nav class="navbar navbar-default">
@@ -54,30 +54,16 @@
             </div><!-- /.navbar-collapse -->
           </div><!-- /.container-fluid -->
         </nav>
-    <div class="container">
-    <div class=" col-md-12">
-      <div class="jumbotron">
-        <h1>MetaBreakers site v1</h1>
-        <h2>...Welcome to our team site please feel free to look around!</h2>
-        <a href="/signup" class="btn btn-lg btn-success">Sign up now!</a>
-      </div>
-    </div>
-  </div>
-  <form ng-submit="submitLoginForm()" class="navbar-form navbar-right">
 
-      <div class="form-group">
-          <input ng-model="loginForm.email" type="text" placeholder="Email" name="email" class="form-control">
-      </div>
-      <div class="form-group">
-          <input ng-model="loginForm.password" type="password" placeholder="Password" name="password" class="form-control">
-      </div>
-      <button type="submit" class="btn btn-success">
-        <span ng-show="!loginForm.loading">Sign in</span>
-        <span ng-show="loginForm.loading" class="fa fa-spinner"></span>
-        <span ng-show="loginForm.loading">Signing in...</span>
-      </button>
+  <form ng-submit="getAllThemCards()" class="navbar-form navbar-right">
+    <button type="submit" class="btn btn-success">Get the cards</button>
       <input type="hidden" name="_csrf" value="<%= _csrf %>" />
   </form>
+
+  <input type="text" ng-model="cardname" ng-change="nameChanged()">
+  <img ng-src={{card.img}}>
+  <img ng-src={{card.imgGold}}>
+
 
     <!--SCRIPTS-->
     <script src="/js/dependencies/sails.io.js"></script>

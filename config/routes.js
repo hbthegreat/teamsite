@@ -38,6 +38,7 @@ module.exports.routes = {
 
   'GET /signup': {view: 'signup'},
   'GET /': 'PageController.showHomePage',
+  'GET /cardP' : 'PageController.showCardPage',
 
   ////////////////////////////////////////////////////////////
   // JSON API
@@ -46,8 +47,11 @@ module.exports.routes = {
   // User enrollment + authentication
   'POST /signup': 'UserController.signup',
   'PUT /login': 'UserController.login',
-  'GET /logout': 'UserController.logout'
+  'GET /logout': 'UserController.logout',
 
+  // Card stuff
+  'POST /getCards': 'CardController.addAllCards',
+  'GET /getCard': 'CardController.getCard'
   // '/': {
   //   view: 'homepage'
   // }
