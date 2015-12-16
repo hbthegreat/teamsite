@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Sign Up for Activity Overlord (angular)</title>
+    <title>MetaBreakers</title>
 
     <!-- Viewport mobile tag for sensible mobile support -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -25,10 +25,10 @@
 
       <!-- Creates the navbar -->
         <nav class="navbar navbar-default navbar-inverse">
-      
+
           <!-- This creates the mechanism for the collapse button -->
           <button type="button" class="navbar-toggle" data-toggle="collapse" ng-init="navCollapsed = true" ng-click="navCollapsed = !navCollapsed">
-      
+
             <!-- This controls the number of lines in the image when the nav collapse -->
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
@@ -36,10 +36,10 @@
           </button>
 
           <!-- This is the brand on the left-hand side. -->
-          <a class="navbar-brand" href="/#"> TeamName/Logo Goes Here</a>
+          <a class="navbar-brand" href="/#"> MetaBreakers</a>
           <div class="collapse navbar-collapse" ng-class="!navCollapsed && 'in'">
 
-          <!-- LOGIN FORM -->  
+          <!-- LOGIN FORM -->
           <form ng-submit="submitLoginForm()" class="navbar-form navbar-right">
 
               <!-- E M A I L -->
@@ -64,7 +64,7 @@
       </div>
     </div>
 
-    <!-- SIGNUP FORM --> 
+    <!-- SIGNUP FORM -->
     <form ng-submit="submitSignupForm()" id="sign-up-form" class="form-signin" name="signup">
       <h2 class="form-signin-heading">Create an account</h2>
       <div class="row">
@@ -155,24 +155,16 @@
     </form>
 
 
-
-    <!-- <div class="container">
-        <hr>
-        <footer class="footer pull-right">
-            <div>
-                <a href="http://sailsjs.com/">sailsjs.org</a>
-                <div>tutorial by irl nathan, with a bunch of help from cody, gabe, heather, mike, racheal, scott and zoli</div>
-            </div>
-        </footer>
-    </div> -->
-
-
     <!--SCRIPTS-->
     <script src="/js/dependencies/sails.io.js"></script>
     <script src="/js/dependencies/angular.min.js"></script>
     <script src="/js/dependencies/angular-toastr.js"></script>
     <script src="/js/dependencies/compareTo.module.js"></script>
     <script src="/js/public/signup/SignupModule.js"></script>
+    <script src="/js/private/dashboard/DashboardModule.js"></script>
+    <script src="/js/public/homepage/HomepageModule.js"></script>
+    <script src="/js/private/dashboard/DashboardController.js"></script>
+    <script src="/js/public/homepage/HomepageController.js"></script>
     <script src="/js/public/signup/SignupController.js"></script>
     <!--SCRIPTS END-->
   </body>
