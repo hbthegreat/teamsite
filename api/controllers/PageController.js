@@ -42,5 +42,8 @@ module.exports = {
 
     });
   },
-
+	showTeamPage: function (req, res)
+	{
+		return res.view('team');
+	}
 };

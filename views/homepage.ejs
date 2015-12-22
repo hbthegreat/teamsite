@@ -1,98 +1,26 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>MetaBreakers</title>
-
-    <!-- Viewport mobile tag for sensible mobile support -->
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
-
-    <!--STYLES-->
-    <link rel="stylesheet" href="/styles/angular-toastr.css">
-    <link rel="stylesheet" href="/styles/bootstrap.min.css">
-    <link rel="stylesheet" href="/styles/importer.css">
-    <!--STYLES END-->
-
-    <!--Added this so the client has access to the csrf tag and it's grabbed first service side on every page -->
-    <script type="text/javascript">
-    window.SAILS_LOCALS = { _csrf: "<%= _csrf %>" };
-    </script>
-  </head>
-
-  <body class="main-image" ng-app="HomepageModule" ng-controller="HomepageController" ng-cloak>
-
-      <!-- Creates the navbar -->
-      <nav class="navbar navbar-default">
-          <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-nav" aria-expanded="false">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
-              <a class="navbar-brand logo-wrapper" href="/"><img class="logo-dimensions" src="/images/logo.png"></a>
-            </div>
-
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="main-nav">
-              <ul class="nav navbar-nav navbar-left">
-                <li role="presentation"><a href="/">Home</a></li>
-                <li role="presentation"><a href="/articles">Articles</a></li>
-                <li role="presentation"><a href="/decks">Decks</a></li>
-                <li role="presentation"><a href="/events">Events</a></li>
-                <li role="presentation"><a href="/teams">Teams</a></li>
-                <li role="presentation"><a href="/sponsors">Sponsors</a></li>
-                <li role="presentation"><a href="/about">About</a></li>
-              </ul>
-              <ul class="nav navbar-nav navbar-right">
-                <li role="presentation"><a href="/signup">Signup</a></li>
-                <li role="presentation"><a href="/signin">Signin</a></li>
-              </ul>
-
-            </div><!-- /.navbar-collapse -->
-          </div><!-- /.container-fluid -->
-        </nav>
-    <div class="container">
-    <div class=" col-md-12">
-      <div class="jumbotron">
-        <h1>MetaBreakers site v1</h1>
-        <h2>...Welcome to our team site please feel free to look around!</h2>
-        <a href="/signup" class="btn btn-lg btn-success">Sign up now!</a>
-      </div>
+<div class="main-image" ng-app="HomepageModule" ng-controller="HomepageController" ng-cloak>
+  <div class="container">
+  <div class=" col-md-12">
+    <div class="jumbotron">
+      <h1>Arcane Intellect site v1</h1>
+      <h2>...Welcome to our team site please feel free to look around!</h2>
+      <a href="/signup" class="btn btn-lg btn-success">Sign up now!</a>
     </div>
   </div>
-  <form ng-submit="submitLoginForm()" class="navbar-form navbar-right">
-
-      <div class="form-group">
-          <input ng-model="loginForm.email" type="text" placeholder="Email" name="email" class="form-control">
-      </div>
-      <div class="form-group">
-          <input ng-model="loginForm.password" type="password" placeholder="Password" name="password" class="form-control">
-      </div>
-      <button type="submit" class="btn btn-success">
-        <span ng-show="!loginForm.loading">Sign in</span>
-        <span ng-show="loginForm.loading" class="fa fa-spinner"></span>
-        <span ng-show="loginForm.loading">Signing in...</span>
-      </button>
-      <input type="hidden" name="_csrf" value="<%= _csrf %>" />
-  </form>
-
-    <!--SCRIPTS-->
-    <script src="/js/dependencies/sails.io.js"></script>
-    <script src="/js/dependencies/angular.min.js"></script>
-    <script src="/js/dependencies/angular-toastr.js"></script>
-    <script src="/js/dependencies/compareTo.module.js"></script>
-    <script src="/js/dependencies/ui-bootstrap-tpls-0.14.3.min.js"></script>
-    <script src="/js/public/signup/SignupModule.js"></script>
-    <script src="/js/private/dashboard/DashboardModule.js"></script>
-    <script src="/js/public/homepage/HomepageModule.js"></script>
-    <script src="/js/public/cards/CardModule.js"></script>
-    <script src="/js/private/dashboard/DashboardController.js"></script>
-    <script src="/js/public/cards/CardController.js"></script>
-    <script src="/js/public/homepage/HomepageController.js"></script>
-    <script src="/js/public/signup/SignupController.js"></script>
-    <!--SCRIPTS END-->
-  </body>
-</html>
+</div>
+<!--TODO move this to an actual login page or modal -->
+<form ng-submit="submitLoginForm()" class="navbar-form navbar-right">
+    <div class="form-group">
+        <input ng-model="loginForm.email" type="text" placeholder="Email" name="email" class="form-control">
+    </div>
+    <div class="form-group">
+      <input ng-model="loginForm.password" type="password" placeholder="Password" name="password" class="form-control">
+    </div>
+    <button type="submit" class="btn btn-success">
+      <span ng-show="!loginForm.loading">Sign in</span>
+      <span ng-show="loginForm.loading" class="fa fa-spinner"></span>
+      <span ng-show="loginForm.loading">Signing in...</span>
+    </button>
+    <input type="hidden" name="_csrf" value="<%= _csrf %>" />
+</form>
+</div>

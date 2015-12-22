@@ -38,6 +38,7 @@ module.exports.routes = {
 
   'GET /signup': {view: 'signup'},
   'GET /': 'PageController.showHomePage',
+  'GET /team': 'PageController.showTeamPage',
   'GET /cardP' : 'PageController.showCardPage',
 
   ////////////////////////////////////////////////////////////
@@ -51,10 +52,15 @@ module.exports.routes = {
 
   // Card stuff
   'POST /getCards': 'CardController.addAllCards',
-  'GET /getCard': 'CardController.getCard'
-  // '/': {
-  //   view: 'homepage'
-  // }
+  'GET /getCard': 'CardController.getCard',
+
+  //Hermination stuff
+  'GET /hermination' : 'HerminationController.showHerminationPage',
+  'GET /hermination/latest' :'HerminationController.showLatestResults',
+  'GET /hermination/hall-of-fame' : 'HerminationController.showHallOfFame',
+  'GET /hermination/past-broadcasts' : 'HerminationController.showPastBroadcasts',
+  'GET /hermination/articles' : 'HerminationController.showArticles',
+  'GET /hermination/about' : 'HerminationController.showAbout'
 
   /***************************************************************************
   *                                                                          *
