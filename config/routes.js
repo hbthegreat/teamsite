@@ -60,7 +60,17 @@ module.exports.routes = {
   'GET /hermination/hall-of-fame' : 'HerminationController.showHallOfFame',
   'GET /hermination/past-broadcasts' : 'HerminationController.showPastBroadcasts',
   'GET /hermination/articles' : 'HerminationController.showArticles',
-  'GET /hermination/about' : 'HerminationController.showAbout'
+  'GET /hermination/about' : 'HerminationController.showAbout',
+
+  //Article stuff
+  'GET /articles' : 'ArticleController.showArticlesPage',
+  'GET /articles/:articlename' : 'ArticleController.showSpecificArticle',
+
+  //Comments stuff
+  'POST /comments/add/' : 'CommentsController.add',
+  'GET /comments/getAllForArticle/:articleId': 'CommentsController.getAllForArticle',
+  'POST /comments/upvote/:commentId': 'CommentsController.upvote',
+  'POST /comments/downvote/:commentId': 'CommentsController.downvote'
 
   /***************************************************************************
   *                                                                          *

@@ -1,0 +1,39 @@
+The article will be below
+<div class="container">
+  <h1><%= article.title %></h1>
+  <p><%- article.content %></p>
+  <p><%= article.upvotes %></p>
+  <p><%= article.isPremium %></p>
+  <p><%= article.lastUpdated %></p>
+  <p><%= article.comments %></p>
+  <h3>Everything about author here</h3>
+
+  <p><%= article.author.thumbnailImageUrl %></p>
+  <p><%= article.author.name %></p>
+  <p><%= article.author.about %></p>
+  <p><%= article.author.twitterUrl %></p>
+  <p><%= article.author.facebookUrl %></p>
+  <p><%= article.author.twitchUrl %></p>
+  <p><%= article.author.youtubeUrl %></p>
+  <div class="comment-section" ng-app="CommentModule" ng-controller="CommentController" ng-cloak ng-init="initialiseComments(<%= article.id %>)">
+    <form ng-submit="submitComment(<%= article.id %>)">
+      <textarea ng-model="commentText" type="text" name="text" placeholder="Leave a comment..." ></textarea>
+      <input class="btn btn-default" type="submit" value="Submit" />
+    </form>
+
+    <div class="comments" ng-repeat="comment in allComments">
+      <div class="row">
+        <div class="comment-body col-xs-5">
+          <span class="comment-author">John Smith{{ comment.author }} </span>
+          <span class="comment-posted">{{ comment.updatedAt | date: short }}</span>
+          <div class="comment-content">Content: {{ comment.content }}</div>
+        </div>
+        <div class="comment-score col-xs-2">
+          <div><i ng-click="upvoteComment(comment)" class="fa fa-arrow-up"></i></div>
+          <div> Score: {{ (comment.upvotes - comments.downvotes) }}</div>
+          <div><i ng-click="downvoteComment(comment)" class="fa fa-arrow-down"></i></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

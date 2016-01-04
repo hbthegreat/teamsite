@@ -50,5 +50,14 @@ module.exports = {
     gravatarUrl: {
       type: 'string'
     }
+  },
+  seedData:[
+  {
+    name : "Hbthegreat",
+    title: "The best gamer in the world",
+    email: "ryan.handby@gmail.com",
+    encryptedPassword : "$2a$10$5G0kjva3jg2eveG/nkVdwuZ.rfkkJ2olFVO06eRsLch9gHHqNi0Hm",
+    gravatarUrl: "http://www.gravatar.com/avatar/da074297714d1454939065cf567c421c?"
   }
+]
 };
