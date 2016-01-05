@@ -124,7 +124,9 @@ module.exports = {
     locale: {
       type: 'string'
     },
-
+    deck: {
+      model: 'deck'
+    },
     //list of all mechanics on the card windfury/combo/overload etc
     mechanics: {
      collection: 'mechanic'

@@ -37,6 +37,7 @@ var jsFilesToInject = [
   'js/public/homepage/HomepageModule.js',
   'js/public/comments/CommentModule.js',
   'js/public/cards/CardModule.js',
+  'js/public/deck-builder/DeckBuilderModule.js',
   'js/**/*.js'
 ];
 

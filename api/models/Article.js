@@ -11,7 +11,7 @@ attributes: {
   //TODO add link for author object
     author: {
       model: 'author',
-      //required: true
+      required: true
     },
 
     //The articles Title

@@ -70,8 +70,10 @@ module.exports.routes = {
   'POST /comments/add/' : 'CommentsController.add',
   'GET /comments/getAllForArticle/:articleId': 'CommentsController.getAllForArticle',
   'POST /comments/upvote/:commentId': 'CommentsController.upvote',
-  'POST /comments/downvote/:commentId': 'CommentsController.downvote'
+  'POST /comments/downvote/:commentId': 'CommentsController.downvote',
 
+  //Deckbuilder stuff
+  'GET /decks/deck-builder' : 'DeckController.showDeckBuilderPage'
   /***************************************************************************
   *                                                                          *
   * Custom routes here...                                                    *

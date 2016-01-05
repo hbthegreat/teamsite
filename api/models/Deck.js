@@ -1,5 +1,5 @@
 /**
-* Comment.js
+* Deck.js
 *
 * @description :: TODO: You might write a short summary of how this model works and what it represents here.
 * @docs        :: http://sailsjs.org/#!documentation/models
@@ -8,12 +8,6 @@
 module.exports = {
 
   attributes: {
-    article: {
-      model: 'article'
-    },
-    deck: {
-      model: 'deck'
-    },
     author: {
       model: 'user',
       required: true
@@ -21,11 +15,6 @@ module.exports = {
     content: {
       type: 'string',
       required: true
-    },
-    lastUpdated: {
-      type: 'date',
-      required: true,
-      defaultsTo: new Date(0)
     },
     upvotes: {
       type: 'integer',
@@ -41,6 +30,27 @@ module.exports = {
       type: 'integer',
       required: true,
       defaultsTo: 0
+    },
+    deckType: {
+      type: 'string',
+      required: true
+    },
+    craftingCost: {
+      type: 'integer',
+      required: true
+    },
+    decklink: {
+      type: 'string',
+      required: true,
+      unique: true
+    },
+    cards: {
+      collection: 'card',
+      via: 'deck'
+    },
+    comments: {
+      collection: 'comment',
+      via: 'deck'
     }
   }
 };

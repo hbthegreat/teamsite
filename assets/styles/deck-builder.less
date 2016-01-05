@@ -1,0 +1,69 @@
+.mana-cost{
+  .hexagon {
+    position: relative;
+    width: 50px;
+    height: 28.87px;
+    background-color: #2e69b9;
+    margin: 14.43px 0;
+    box-shadow: 0 0 20px rgba(183,183,183,0.65);
+    border-left: solid 3px #7c7a7a;
+    border-right: solid 3px #7c7a7a;
+    margin-bottom: 35px;
+  }
+
+  .hexagon:before,
+  .hexagon:after {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    width: 35.36px;
+    height: 35.36px;
+    -webkit-transform: scaleY(0.5774) rotate(-45deg);
+    -ms-transform: scaleY(0.5774) rotate(-45deg);
+    transform: scaleY(0.5774) rotate(-45deg);
+    background-color: inherit;
+    left: 4.3223px;
+    box-shadow: 0 0 20px rgba(183,183,183,0.65);
+  }
+
+  .hexagon:before {
+    top: -17.6777px;
+    border-top: solid 4.2426px #7c7a7a;
+    border-right: solid 4.2426px #7c7a7a;
+  }
+
+  .hexagon:after {
+    bottom: -17.6777px;
+    border-bottom: solid 4.2426px #7c7a7a;
+    border-left: solid 4.2426px #7c7a7a;
+  }
+
+  /*cover up extra shadows*/
+  .hexagon span {
+    display: block;
+    position: absolute;
+    top:1.7320508075688772px;
+    left: 0;
+    width:44px;
+    height:25.4034px;
+    z-index: 2;
+    background: inherit;
+    text-align: center;
+    line-height: 28px;
+  }
+}
+
+.mana-curve{
+  .mana-value{
+    float: left;
+    margin-right:15px;
+  }
+  .seven-plus{
+    margin-right:7px;
+  }
+  .progress:after{
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
