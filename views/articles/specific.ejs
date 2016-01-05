@@ -30,7 +30,7 @@ The article will be below
         </div>
         <div class="comment-score col-xs-2">
           <div><i ng-click="upvoteComment(comment)" class="fa fa-arrow-up"></i></div>
-          <div> Score: {{ (comment.upvotes - comments.downvotes) }}</div>
+          <div> Score: {{ comment.score }}</div>
           <div><i ng-click="downvoteComment(comment)" class="fa fa-arrow-down"></i></div>
         </div>
       </div>

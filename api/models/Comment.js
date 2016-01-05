@@ -35,6 +35,10 @@ module.exports = {
       required: true,
       defaultsTo: 0
     },
-
+    score:{
+      type: 'integer',
+      required: true,
+      defaultsTo: 0
+    }
   }
 };

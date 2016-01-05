@@ -35,7 +35,8 @@ module.exports = {
 			author: 1,
 			content: req.param('content'),
 			upvotes: 0,
-			downvotes: 0
+			downvotes: 0,
+			score: 0
 		}, function commentCreated(err, newComment){
 			if (err) {
 
@@ -54,9 +55,10 @@ module.exports = {
 		Comment.findOne({id: req.param('commentId')}).exec(function findCallback(err, comment) {
 			if (err) return res.serverError(err);
 			comment.upvotes = comment.upvotes + 1;
+			comment.score = comment.upvotes - comment.downvotes;
 			comment.save(function(err, updatedComment) {
 				//TODO return the actual value
-				return res.json({});
+				return res.json(updatedComment);
 			});
 		});
 	},
@@ -65,9 +67,10 @@ module.exports = {
 		Comment.findOne({id: req.param('commentId')}).exec(function findCallback(err, comment) {
 			if (err) return res.serverError(err);
 			comment.downvotes = comment.downvotes + 1;
+			comment.score = comment.upvotes - comment.downvotes;
 			comment.save(function(err, updatedComment) {
 				//TODO return the actual value
-				return res.json({});
+				return res.json(updatedComment);
 			});
 		});
 	}
