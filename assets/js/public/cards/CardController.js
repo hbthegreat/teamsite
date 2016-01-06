@@ -18,6 +18,9 @@ angular.module('CardModule').controller('CardController', ['$scope', '$http', 't
   }
 
   $scope.getAllThemCards = function(){
-    $http.post('/getCards')
+    $http.get('/getCards').then(function success(response){
+      var x = response;
+      debugger;
+    })
   }
 }]);

@@ -19,6 +19,66 @@ module.exports = {
 		})
 	},
 
+	downloadCardImages: function (req, res)
+	{
+		var unirest = require('unirest');
+		var cards = {};
+		unirest.get('https://omgvamp-hearthstone-v1.p.mashape.com/cards')
+		.header('X-Mashape-Key', 'VVsMO9zhOzmshhFcrgPWPdgDNloSp1ZAs1YjsnjFcyQhJ5yk3T')
+		.end(function (result){
+			cards = result.body;
+			var basicCards = cards['The League of Explorers'];
+
+			for(var i=0; i< basicCards.length; i++){
+				var currentCard = basicCards[i];
+				var currentCardType = currentCard['type'] || null;
+				var currentCardImg = currentCard['img'] || null;
+				var currentCardGoldImg =  currentCard['imgGold'] || null;
+				var currentCardCollectible = currentCard['collectible'] || null;
+
+				if((currentCardType === 'Weapon' || currentCardType === 'Spell' || currentCardType === 'Minion') && currentCardCollectible)
+				{
+					var playerClass = currentCard['playerClass'] || 'neutral';
+					playerClass = playerClass.toLowerCase();
+					var quality = currentCard['rarity'] || 'no quality';
+					quality = quality.toLowerCase();
+					if(quality === 'no quality')
+					{
+						console.log('no quality what the fuck? '+ currentCard['name']);
+					}
+					var cardName = currentCard['name'].replace(/\s+/g, '-').replace(/\'+/g, '').toLowerCase();
+					/*means they are a card not some random bullshit*/
+					if(currentCardImg)
+					{
+						var fileType = currentCardImg.split('.').pop();
+						var fileName = cardName+'-standard'+'.'+fileType;
+						var filePath = '/the-league-of-explorers/' + playerClass+'/'+currentCardType.toLowerCase()+'/'+quality;
+						downloadFileToLocation(currentCardImg, filePath, fileName,i, function (num) {
+							console.log("success classic standard: "+num);
+						})
+					}
+					else {
+						console.log('Card => ' + currentCard['name']+ " does not have an image");
+					}
+
+					if(currentCardGoldImg)
+					{
+						var fileType = currentCardGoldImg.split('.').pop();
+						var fileName = cardName+'-gold'+'.'+fileType;
+						var filePath = '/the-league-of-explorers/' + playerClass+'/'+currentCardType.toLowerCase()+'/'+quality;
+						downloadFileToLocation(currentCardGoldImg, filePath, fileName, i, function (num) {
+							console.log("success classic gold: "+num);
+						})
+
+					}
+					else {
+						console.log('Card => ' + currentCard['name']+ " does not have a gold image");
+					}
+				}
+			}
+		});
+	},
+/*does cards heroes everything + enchantments*/
 	addAllCards: function(req, res) {
 			var unirest = require('unirest');
 			var cards = {};
@@ -268,3 +328,28 @@ module.exports = {
 			});
 	}
 };
+function downloadFileToLocation(uri, filePath, fileName,num, cb)
+{
+	var saveDir = '/home/hbthegreat/teamsite/assets/images' + filePath;
+	var fullFilePath = saveDir+ '/'+fileName;
+
+	var http = require('http');
+	var fs = require('fs');
+	var mkdirp = require('mkdirp');
+
+	mkdirp.sync(saveDir, function(err) {
+		console.log('directory not created');
+		console.log(err);
+	});
+
+	var file = fs.createWriteStream(fullFilePath);
+	var request = http.get(uri, function(response) {
+		response.pipe(file);
+		file.on('finish', function() {
+	  	file.close(cb(num));  // close() is async, call cb after close completes.
+		});
+	}).on('error', function(err) { // Handle errors
+			fs.unlink(fullFilePath); // Delete the file async. (But we don't check the result)
+			if (cb) cb(err.message);
+	});
+}

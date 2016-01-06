@@ -51,7 +51,7 @@ module.exports.routes = {
   'GET /logout': 'UserController.logout',
 
   // Card stuff
-  'POST /getCards': 'CardController.addAllCards',
+  'GET /getCards': 'CardController.downloadCardImages',
   'GET /getCard': 'CardController.getCard',
 
   //Hermination stuff
