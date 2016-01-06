@@ -1,6 +1,6 @@
 <h1>Druid</h1>
 
-<div class="col-md-8">
+<div class="col-md-9">
   <div class="row">
     <div class="col-md-3 col-md-offset-2">
       <button type="button" class="btn btn-default" ng-class="{active: filters.classNeutral ==='class'}" ng-click="filterByClassNeutral('class')">Druid</button>
@@ -29,9 +29,39 @@
         <a href="#" ng-click="filterByMana('7+')" onclick="return false;"><div class="hexagon" ng-class="{active: filters.mana ==='7+'}"><span>7+</span></div></a>
       </div>
     </div>
+    <div class="col-md-10">
+      <div class="row">
+        <div class="col-md-3">
+          <img class="img-responsive" src="/images/the-grand-tournament/druid/spell/common/living-roots-gold.gif" />
+        </div>
+        <div class="col-md-3">
+          <img class="img-responsive" src="/images/the-grand-tournament/druid/spell/common/living-roots-gold.gif" />
+        </div>
+        <div class="col-md-3">
+          <img class="img-responsive" src="/images/the-grand-tournament/druid/spell/common/living-roots-gold.gif" />
+        </div>
+        <div class="col-md-3">
+          <img class="img-responsive" src="/images/the-grand-tournament/druid/spell/common/living-roots-gold.gif" />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-3">
+          <img class="img-responsive" src="/images/the-grand-tournament/druid/spell/common/living-roots-gold.gif" />
+        </div>
+        <div class="col-md-3">
+          <img class="img-responsive" src="/images/the-grand-tournament/druid/spell/common/living-roots-gold.gif" />
+        </div>
+        <div class="col-md-3">
+          <img class="img-responsive" src="/images/the-grand-tournament/druid/spell/common/living-roots-gold.gif" />
+        </div>
+        <div class="col-md-3">
+          <img class="img-responsive" src="/images/the-grand-tournament/druid/spell/common/living-roots-gold.gif" />
+        </div>
+      </div>
+    </div>
   </div>
 </div>
-<div class="col-md-4">
+<div class="col-md-3">
   <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
     <div class="panel panel-default">
       <div class="panel-heading" role="tab" id="headingOne">
@@ -44,58 +74,100 @@
       <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
         <div class="panel-body">
           <div class="mana-curve">
-            <div class="mana-value">0</div>
-            <div class="progress">
-              <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
-                <span class="sr-only">60% Complete</span>
-              </div>
-            </div>
-            <div class="mana-value">1</div>
-            <div class="progress">
-              <div class="progress-bar" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" style="width: 10%;">
-                <span class="sr-only">10% Complete</span>
-              </div>
-            </div>
-            <div class="mana-value">2</div>
-            <div class="progress">
-              <div class="progress-bar" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%;">
-                <span class="sr-only">40% Complete</span>
-              </div>
-            </div>
-            <div class="mana-value">3</div>
-            <div class="progress">
-              <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width: 90%;">
-                <span class="sr-only">90% Complete</span>
-              </div>
-            </div>
-            <div class="mana-value">4</div>
-            <div class="progress">
-              <div class="progress-bar" role="progressbar" aria-valuenow="12" aria-valuemin="0" aria-valuemax="100" style="width: 12%;">
-                <span class="sr-only">12% Complete</span>
-              </div>
-            </div>
-            <div class="mana-value">5</div>
-            <div class="progress">
-              <div class="progress-bar" role="progressbar" aria-valuenow="18" aria-valuemin="0" aria-valuemax="100" style="width: 18%;">
-                <span class="sr-only">18% Complete</span>
-              </div>
-            </div>
-            <div class="mana-value">6</div>
-            <div class="progress">
-              <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
-                <span class="sr-only">60% Complete</span>
-              </div>
-            </div>
-            <div class="mana-value seven-plus">7+</div>
-            <div class="progress">
-              <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
-                <span class="sr-only">60% Complete</span>
-              </div>
-            </div>
+            <ul class="mana-bars clearfix">
+              <li>
+                  <div class="mana-card-amount">
+                      0
+                  </div>
+                  <div class="mana-curve-bar">
+                      <span style="height: 59px"></span>
+                  </div>
+                  <div class="mana-curve-number">
+                      0
+                  </div>
+              </li>
+              <li>
+                  <div class="mana-card-amount">
+                      0
+                  </div>
+                  <div class="mana-curve-bar">
+                      <span style="height: 30px"></span>
+                  </div>
+                  <div class="mana-curve-number">
+                      1
+                  </div>
+              </li>
+              <li>
+                  <div class="mana-card-amount">
+                      0
+                  </div>
+                  <div class="mana-curve-bar">
+                      <span style="height: 27px"></span>
+                  </div>
+                  <div class="mana-curve-number">
+                      2
+                  </div>
+              </li>
+              <li>
+                  <div class="mana-card-amount">
+                      0
+                  </div>
+                  <div class="mana-curve-bar">
+                      <span style="height: 0px"></span>
+                  </div>
+                  <div class="mana-curve-number">
+                      3
+                  </div>
+              </li>
+              <li>
+                  <div class="mana-card-amount">
+                      0
+                  </div>
+                  <div class="mana-curve-bar">
+                      <span style="height: 11px"></span>
+                  </div>
+                  <div class="mana-curve-number">
+                      4
+                  </div>
+              </li>
+              <li>
+                  <div class="mana-card-amount">
+                      0
+                  </div>
+                  <div class="mana-curve-bar">
+                      <span style="height: 25px"></span>
+                  </div>
+                  <div class="mana-curve-number">
+                      5
+                  </div>
+              </li>
+              <li>
+                  <div class="mana-card-amount">
+                      0
+                  </div>
+                  <div class="mana-curve-bar">
+                      <span style="height: 50px"></span>
+                  </div>
+                  <div class="mana-curve-number">
+                      6
+                  </div>
+              </li>
+              <li>
+                  <div class="mana-card-amount">
+                      0
+                  </div>
+                  <div class="mana-curve-bar">
+                      <span style="height: 15px"></span>
+                  </div>
+                  <div class="mana-curve-number">
+                      7+
+                  </div>
+              </li>
+            </ul>
           </div>
         </div>
-      </div>
     </div>
+  </div>
     <div class="panel panel-default">
       <div class="panel-heading" role="tab" id="headingTwo">
         <h4 class="panel-title">

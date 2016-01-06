@@ -68,16 +68,39 @@
 
 
 .mana-curve{
-  .mana-value{
-    float: left;
-    margin-right:15px;
-  }
-  .seven-plus{
-    margin-right:7px;
-  }
-  .progress:after{
-    content: "";
-    display: table;
-    clear: both;
+  .mana-bars{
+    display: block;
+    width: 90%;
+    padding: 0;
+    margin: 9px auto;
+    li {
+      float: left;
+      list-style: none;
+      width: 12.5%
+    }
+    .mana-card-amount{
+      width: 100%;
+      margin-bottom:5px;
+      text-align: center;
+    }
+    .mana-curve-bar{
+      text-align: center;
+      position: relative;
+      width: 50%;
+      margin: 0 auto;
+      height: 100px;
+      background-color: white;
+      span {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom:0;
+        transition: height .5s;
+        background-color: blue;
+      }
+    }
+    .mana-curve-number{
+      text-align: center;
+    }
   }
 }
