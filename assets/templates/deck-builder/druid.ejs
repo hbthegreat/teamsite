@@ -3,23 +3,30 @@
 <div class="col-md-8">
   <div class="row">
     <div class="col-md-3 col-md-offset-2">
-      <button type="button" class="btn btn-default active">Druid</button>
-      <button type="button" class="btn btn-default">Neutral</button>
+      <button type="button" class="btn btn-default" ng-class="{active: filters.classNeutral ==='class'}" ng-click="filterByClassNeutral('class')">Druid</button>
+      <button type="button" class="btn btn-default" ng-class="{active: filters.classNeutral ==='neutral'}" ng-click="filterByClassNeutral('neutral')">Neutral</button>
     </div>
     <div class="col-md-7">
-      there will be many filters here blah blah b lah blah blah b lah blah blah b lah blah blah b lah blah blah b lah blah blah b lah
+    <ui-select multiple ng-model="filters.selectedMechanics" theme="select2" style="width: 300px;">
+      <ui-select-match placeholder="Select mechanics...">{{$item}}</ui-select-match>
+      <ui-select-choices repeat="mechanic in availableMechanics | filter:$select.search">
+        {{mechanic}}
+      </ui-select-choices>
+    </ui-select>
     </div>
   </div>
   <div class="row">
     <div class="col-md-2">
       <div class="mana-cost">
-        <div class="hexagon"><span>1</span></div>
-        <div class="hexagon"><span>2</span></div>
-        <div class="hexagon"><span>3</span></div>
-        <div class="hexagon"><span>4</span></div>
-        <div class="hexagon"><span>5</span></div>
-        <div class="hexagon"><span>6</span></div>
-        <div class="hexagon"><span>7+</span></div>
+        <a href="#" ng-click="filterByMana('all')" onclick="return false;"><div class="hexagon" ng-class="{active: filters.mana ==='all'}"><span>All</span></div></a>
+        <a href="#" ng-click="filterByMana(0)" onclick="return false;"><div class="hexagon" ng-class="{active: filters.mana === 0}"><span>0</span></div></a>
+        <a href="#" ng-click="filterByMana(1)" onclick="return false;"><div class="hexagon" ng-class="{active: filters.mana === 1}"><span>1</span></div></a>
+        <a href="#" ng-click="filterByMana(2)" onclick="return false;"><div class="hexagon" ng-class="{active: filters.mana === 2}"><span>2</span></div></a>
+        <a href="#" ng-click="filterByMana(3)" onclick="return false;"><div class="hexagon" ng-class="{active: filters.mana === 3}"><span>3</span></div></a>
+        <a href="#" ng-click="filterByMana(4)" onclick="return false;"><div class="hexagon" ng-class="{active: filters.mana === 4}"><span>4</span></div></a>
+        <a href="#" ng-click="filterByMana(5)" onclick="return false;"><div class="hexagon" ng-class="{active: filters.mana === 5}"><span>5</span></div></a>
+        <a href="#" ng-click="filterByMana(6)" onclick="return false;"><div class="hexagon" ng-class="{active: filters.mana === 6}"><span>6</span></div></a>
+        <a href="#" ng-click="filterByMana('7+')" onclick="return false;"><div class="hexagon" ng-class="{active: filters.mana ==='7+'}"><span>7+</span></div></a>
       </div>
     </div>
   </div>

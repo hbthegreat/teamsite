@@ -1,4 +1,4 @@
-angular.module('DeckBuilderModule', ['toastr', 'compareTo', 'ngRoute'])
+angular.module('DeckBuilderModule', ['toastr', 'compareTo', 'ngRoute','ui.select'])
 .config(function($routeProvider){
   $routeProvider
     .when('/druid', {
