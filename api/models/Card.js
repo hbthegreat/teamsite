@@ -8,16 +8,12 @@
 module.exports = {
 
   attributes: {
-    //The hearthstoneapi.com/in game card Id
-      apiCardId: {
-        type: 'string',
-        unique: true
-      },
 
     //The card name
       name: {
         type: 'string',
-        required: true
+        required: true,
+        unique: true
       },
 
     //The set the card comes from

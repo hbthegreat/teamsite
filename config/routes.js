@@ -51,8 +51,9 @@ module.exports.routes = {
   'GET /logout': 'UserController.logout',
 
   // Card stuff
-  'GET /getCards': 'CardController.downloadCardImages',
-  'GET /getCard': 'CardController.getCard',
+  'GET /getAllCardsForClass' : 'CardController.getAllCardsForClass',
+  'GET /getAllNeutralCards' : 'CardController.getAllNeutralCards',
+  //'GET /addCollectibleCards' : 'CardController.addCollectibleCards',
 
   //Hermination stuff
   'GET /hermination' : 'HerminationController.showHerminationPage',

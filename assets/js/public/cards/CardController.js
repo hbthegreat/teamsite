@@ -17,8 +17,22 @@ angular.module('CardModule').controller('CardController', ['$scope', '$http', 't
       });
   }
 
-  $scope.getAllThemCards = function(){
-    $http.get('/getCards').then(function success(response){
+  $scope.getAllNeutralCards = function(){
+    $http.get('/getAllNeutralCards').then(function success(response){
+      var x = response;
+      debugger;
+    })
+  }
+
+  $scope.getAllCardsForClass = function(){
+    $http.get('/getAllCardsForClass', {params: {class: 'Druid'}}).then(function success(response){
+      var x = response;
+      debugger;
+    })
+  }
+
+  $scope.addCollectibleCards = function(){
+    $http.get('/addCollectibleCards').then(function success(response){
       var x = response;
       debugger;
     })
