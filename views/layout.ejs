@@ -12,12 +12,13 @@
     <!--STYLES END-->
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha256-3dkvEK0WLHRJ7/Csr0BZjAWxERc5WH7bdeUya2aXxdU= sha512-+L4yy6FRcDGbXJ9mPG8MT/3UCDzwR9gPeyFNMCtInsol++5m3bk2bXWKdZjvybmohrAsn3Ua5x8gfLnbE1YkOg==" crossorigin="anonymous">
     <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/select2/3.4.5/select2.css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
     <script type="text/javascript">
       window.SAILS_LOCALS = { _csrf: "<%= _csrf %>" };
     </script>
   </head>
   <body>
-    <nav class="navbar navbar-default">
+    <nav class="main-nav navbar light-body">
         <div class="container">
           <!-- Brand and toggle get grouped for better mobile display -->
           <div class="navbar-header">
@@ -33,26 +34,31 @@
           <!-- Collect the nav links, forms, and other content for toggling -->
           <div class="collapse navbar-collapse" id="main-nav">
             <ul class="nav navbar-nav navbar-left">
-              <li role="presentation"><a href="/">Home</a></li>
-              <li role="presentation"><a href="/articles">Articles</a></li>
-              <li role="presentation"><a href="/decks">Decks</a></li>
-              <li role="presentation"><a href="/events">Events</a></li>
-              <li role="presentation"><a href="/team">Teams</a></li>
-              <li role="presentation"><a href="/hermination">Hermination</a></li>
-              <li role="presentation"><a href="/sponsors">Sponsors</a></li>
-              <li role="presentation"><a href="/about">About</a></li>
-              <li role="presentation"><a href="/contact">Contact</a></li>
+              <li role="presentation"><a href="/"><span>HOME</span></a></li>
+              <li role="presentation"><a href="/articles"><span>ARTICLES</span></a></li>
+              <li role="presentation"><a href="/decks"><span>DECKS</span></a></li>
+              <li role="presentation"><a href="/events"><span>EVENTS</span></a></li>
+              <li role="presentation"><a href="/team"><span>TEAM</span></a></li>
+              <li role="presentation"><a href="/hermination"><span>HERMINATION</span></a></li>
+              <li role="presentation"><a href="/sponsors"><span>SPONSORS</span></a></li>
+              <li role="presentation"><a href="/about"><span>ABOUT</span></a></li>
+              <li role="presentation"><a href="/contact"><span>CONTACT</span></a></li>
             </ul>
-            <ul class="nav navbar-nav navbar-right">
-              <li role="presentation"><a href="/signup">Signup</a></li>
-              <li role="presentation"><a href="/signin">Signin</a></li>
-            </ul>
+            <!-- <ul class="nav navbar-nav navbar-right">
+              <li role="presentation"><a href="/signin">SIGNIN</a></li>
+              <li role="presentation"><a href="/signup">SIGNUP</a></li>
+            </ul> -->
 
           </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
       </nav>
     <%- body %>
 
+    <footer>
+      <div class="container">
+        this will be the ticker
+      </div>
+    </footer>
     <!--TEMPLATES-->
     
     <!--TEMPLATES END-->

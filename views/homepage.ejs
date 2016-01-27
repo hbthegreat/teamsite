@@ -1,26 +1,72 @@
-<div class="main-image" ng-app="HomepageModule" ng-controller="HomepageController" ng-cloak>
-  <div class="container">
-  <div class=" col-md-12">
-    <div class="jumbotron">
-      <h1>Arcane Intellect site v1</h1>
-      <h2>...Welcome to our team site please feel free to look around!</h2>
-      <a href="/signup" class="btn btn-lg btn-success">Sign up now!</a>
+
+<div class="container" ng-app="HomepageModule" ng-controller="HomepageController">
+  <div class="row no-gutters">
+    <div ng-class="{'col-md-4': !aHoverboxIsSelected, 'col-md-4': !articlesHoverbox.collapsed, 'col-md-1': articlesHoverbox.collapsed}">
+      <div class="hoverbox" ng-class="{collapsed : articlesHoverbox.collapsed}" ng-click="switchSelectedHoverBox(articlesHoverbox)">
+        <img ng-class="{selected : articlesHoverbox.selected }" src="https://images.unsplash.com/photo-1444858345149-8ff40887589b?crop=entropy&fit=crop&fm=jpg&h=465&ixjsv=2.1.0&ixlib=rb-0.3.5&q=80&w=310">
+        <div class="image-overlay">
+          <h2>Articles</h2>
+          <p>This is where you view articles and other news. Contains the majority of the content from guest authors and Team iNTELLECTUS members.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 fix-spacing" ng-show="(!articlesHoverbox.collapsed && aHoverboxIsSelected)">
+      <div class="hoverbox-article" ng-repeat="article in articlesHoverbox.articles">
+        <div class="hoverbox-article-box" ng-class="selected : article.selected">
+          <div class="icon col-md-2">
+            <i class="{{article.iconClass}}"></i>
+          </div>
+          <div class="article-info col-md-10">
+            <div class="article-name">{{article.name}}</div>
+            <div class="article-flavour-text">{{article.flavourText}}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div ng-class="{'col-md-4': !aHoverboxIsSelected, 'col-md-4': !decksHoverbox.collapsed, 'col-md-1': decksHoverbox.collapsed}">
+      <div class="hoverbox" ng-class="{collapsed : decksHoverbox.collapsed}" ng-click="switchSelectedHoverBox(decksHoverbox)">
+        <img ng-class="{selected : decksHoverbox.selected }" src="http://media.boingboing.net/wp-content/uploads/2015/10/lovable.jpg">
+        <div class="image-overlay">
+          <h2>Decks</h2>
+          <p>This is where you view decks created by the community and Team iNTELLECTUS members.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 fix-spacing" ng-show="(!decksHoverbox.collapsed && aHoverboxIsSelected)">
+      <div class="hoverbox-article" ng-class="selected : deck.selected" ng-repeat="deck in decksHoverbox.decks">
+        <div class="hoverbox-article-box" ng-class="selected : deck.selected">
+          <div class="icon col-md-2">
+            <i class="{{deck.iconClass}}"></i>
+          </div>
+          <div class="article-info col-md-10">
+            <div class="article-name">{{deck.name}}</div>
+            <div class="article-flavour-text">{{deck.flavourText}}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div ng-class="{'col-md-4': !aHoverboxIsSelected, 'col-md-4': !eventsHoverbox.collapsed, 'col-md-1': eventsHoverbox.collapsed}">
+      <div class="hoverbox" ng-class="{collapsed : eventsHoverbox.collapsed}" ng-click="switchSelectedHoverBox(eventsHoverbox)">
+        <img ng-class="{selected : eventsHoverbox.selected }" src="https://images.unsplash.com/photo-1437376576540-236661ddb41f?crop=entropy&fit=crop&fm=jpg&h=465&ixjsv=2.1.0&ixlib=rb-0.3.5&q=80&w=310">
+        <div class="image-overlay">
+          <h2>Events</h2>
+          <p>This is where you view decks created by the community and Team iNTELLECTUS members.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 fix-spacing" ng-show="(!eventsHoverbox.collapsed && aHoverboxIsSelected)" >
+      <div class="hoverbox-article" ng-class="selected : event.selected" ng-repeat="event in eventsHoverbox.events">
+        <div class="hoverbox-article-box" ng-class="selected : event.selected">
+          <div class="icon col-md-2">
+            <i class="{{event.iconClass}}"></i>
+          </div>
+          <div class="article-info col-md-10">
+            <div class="article-name">{{event.name}}</div>
+            <div class="article-flavour-text">{{event.flavourText}}</div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
-<!--TODO move this to an actual login page or modal -->
-<form ng-submit="submitLoginForm()" class="navbar-form navbar-right">
-    <div class="form-group">
-        <input ng-model="loginForm.email" type="text" placeholder="Email" name="email" class="form-control">
-    </div>
-    <div class="form-group">
-      <input ng-model="loginForm.password" type="password" placeholder="Password" name="password" class="form-control">
-    </div>
-    <button type="submit" class="btn btn-success">
-      <span ng-show="!loginForm.loading">Sign in</span>
-      <span ng-show="loginForm.loading" class="fa fa-spinner"></span>
-      <span ng-show="loginForm.loading">Signing in...</span>
-    </button>
-    <input type="hidden" name="_csrf" value="<%= _csrf %>" />
-</form>
-</div>
+<div class="bob-is-great"></div>
